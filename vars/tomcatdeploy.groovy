@@ -1,6 +1,6 @@
-def call(ip,user,credId,war){
+def call(ip,user,credId){
   sshagent([credId]) {
-   sh "target/${war}"
+   sh "target/app1.war"
    // copy war
    sh "scp -o StrictHostKeyChecking=no target/app1.war ${user}@${ip}:/opt/tomcat9999/webapps"
    //stop tomcat
